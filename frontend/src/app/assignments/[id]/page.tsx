@@ -39,7 +39,7 @@ export default function AssignmentDetailPage() {
   // WebSocket — catches real-time events if page is open during generation
   useJobSocket(id, (msg) => {
     if (msg.assignmentId !== id) return
-    if (msg.type === 'processing') {
+    if (msg.type === ('processing' as string)) {
       setAssignment(a => a ? { ...a, status: 'processing' } : a)
       setWsMsg('AI is generating your question paper...')
     }
