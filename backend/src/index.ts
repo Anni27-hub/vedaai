@@ -16,9 +16,19 @@ if (!fs.existsSync('uploads')) fs.mkdirSync('uploads')
 
 // ─── Middleware ────────────────────────────────────────────────
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'vedaai-frontend-dwdwgwmjv-anishs-projects-b43e96af.vercel.app',
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true)
+    if (
+      origin.includes('vercel.app') ||
+      origin.includes('localhost')
+    ) {
+      return callback(null, true)
+    }
+    callback(new Error('Not allowed by CORS'))
+  },
   credentials: true,
 }))
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')))
@@ -37,12 +47,14 @@ setupWebSocket(server)
 // ─── Connect MongoDB → start server ───────────────────────────
 async function main() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Anish:Veda@veda.igml1ep.mongodb.net/?appName=Veda')
+    await mongoose.connect(
+      process.env.MONGODB_URI ||
+      'mongodb+srv://Anish:Veda@veda.igml1ep.mongodb.net/vedaai?appName=Veda'
+    )
     console.log('✅ Connected to MongoDB')
 
     server.listen(PORT, () => {
-      console.log(`✅ API server running on http://localhost:${PORT}`)
-      console.log(`✅ WebSocket ready on wss://vedaai-backend-6s8j.onrender.com/ws:${PORT}/ws`)
+      console.log(`✅ API server running on port ${PORT}`)
     })
   } catch (err) {
     console.error('❌ Startup failed:', err)
