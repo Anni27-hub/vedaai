@@ -1,6 +1,6 @@
 import { Assignment, QuestionPaper } from '@/types'
 
-const BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
+const BASE = process.env.NEXT_PUBLIC_API_URL || 'https://vedaai-backend-6s8j.onrender.com'
 
 async function request<T>(url: string, opts?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE}${url}`, opts)

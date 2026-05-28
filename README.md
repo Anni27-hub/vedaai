@@ -116,7 +116,7 @@ Visit http://localhost:3000
 
 ## WebSocket
 
-Connect to `ws://localhost:4000/ws`
+Connect to `wss://vedaai-backend-6s8j.onrender.com/ws`
 
 Send: `{ type: "subscribe", assignmentId: "..." }`
 

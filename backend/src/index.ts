@@ -16,7 +16,7 @@ if (!fs.existsSync('uploads')) fs.mkdirSync('uploads')
 
 // ─── Middleware ────────────────────────────────────────────────
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'vedaai-frontend-hlwkl31qp-anishs-projects-b43e96af.vercel.app',
+  origin: process.env.FRONTEND_URL || 'vedaai-frontend-dwdwgwmjv-anishs-projects-b43e96af.vercel.app',
   credentials: true,
 }))
 app.use(express.json())
@@ -42,7 +42,7 @@ async function main() {
 
     server.listen(PORT, () => {
       console.log(`✅ API server running on http://localhost:${PORT}`)
-      console.log(`✅ WebSocket ready on ws://localhost:${PORT}/ws`)
+      console.log(`✅ WebSocket ready on wss://vedaai-backend-6s8j.onrender.com/ws:${PORT}/ws`)
     })
   } catch (err) {
     console.error('❌ Startup failed:', err)
