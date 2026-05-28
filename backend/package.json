@@ -6,7 +6,7 @@
     "build": "npx tsc --skipLibCheck",
     "start": "node dist/index.js",
     "worker": "node dist/worker.js",
-    "start:all": "node dist/index.js & node dist/worker.js"
+    "start:all": "concurrently \"node dist/index.js\" \"node dist/worker.js\""
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
