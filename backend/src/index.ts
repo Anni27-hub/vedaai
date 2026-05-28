@@ -16,7 +16,7 @@ if (!fs.existsSync('uploads')) fs.mkdirSync('uploads')
 
 // ─── Middleware ────────────────────────────────────────────────
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: process.env.FRONTEND_URL || 'vedaai-frontend-hlwkl31qp-anishs-projects-b43e96af.vercel.app',
   credentials: true,
 }))
 app.use(express.json())
@@ -37,7 +37,7 @@ setupWebSocket(server)
 // ─── Connect MongoDB → start server ───────────────────────────
 async function main() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/vedaai')
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Anish:Veda@veda.igml1ep.mongodb.net/?appName=Veda')
     console.log('✅ Connected to MongoDB')
 
     server.listen(PORT, () => {
