@@ -49,7 +49,7 @@ async function main() {
   try {
     await mongoose.connect(
       process.env.MONGODB_URI ||
-      'mongodb+srv://Anish:Veda@veda.igml1ep.mongodb.net/vedaai?appName=Veda'
+      'your_mongodb_atlas_uri'
     )
     console.log('✅ Connected to MongoDB')
 
