@@ -8,7 +8,7 @@ import { notifyClients } from './lib/websocket'
 
 async function main() {
   // Connect to MongoDB
-  await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Anish:Veda@veda.igml1ep.mongodb.net/?appName=Veda')
+  await mongoose.connect(process.env.MONGODB_URI || 'your_mongodb_atlas_uri')
   console.log('✅ Worker connected to MongoDB')
 
   const worker = new Worker<GenerationJobData>(
