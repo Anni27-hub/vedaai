@@ -6,7 +6,7 @@ import { Assignment, QuestionPaper } from './models'
 import { generateQuestionPaper } from './lib/ai'
 import { notifyClients } from './lib/websocket'
 
-async function main() {
+export async function startWorker() {
   await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/vedaai')
   console.log('Worker connected to MongoDB')
 
@@ -72,7 +72,4 @@ async function main() {
   console.log(`Worker listening on queue: ${QUEUE_NAME}`)
 }
 
-main().catch((err) => {
-  console.error('Worker startup error:', err)
-  process.exit(1)
-})
+export default startWorker
