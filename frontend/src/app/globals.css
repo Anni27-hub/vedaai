@@ -31,3 +31,27 @@
     @apply bg-white rounded-xl border border-gray-100 shadow-sm;
   }
 }
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .print-paper,
+  .print-paper * {
+    visibility: visible;
+  }
+
+  .print-paper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff;
+  }
+
+  @page {
+    margin: 12mm;
+  }
+}

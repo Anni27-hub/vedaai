@@ -17,7 +17,7 @@ function DifficultyBadge({ level }: { level: Question['difficulty'] }) {
 
 export default function OutputPage({ paper }: { paper: QuestionPaper }) {
   return (
-    <div className="max-w-3xl mx-auto p-8 print:p-0">
+    <div className="print-paper max-w-3xl mx-auto p-8 print:p-0">
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden print:shadow-none print:border-none">
         {/* Paper Header */}
         <div className="text-center py-6 px-8 border-b border-gray-100">
