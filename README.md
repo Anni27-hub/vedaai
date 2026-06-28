@@ -9,7 +9,6 @@
 ![Redis](https://img.shields.io/badge/Redis-BullMQ-DC382D?logo=redis\&logoColor=white)
 ![WebSockets](https://img.shields.io/badge/WebSockets-Real--Time-orange)
 ![Groq](https://img.shields.io/badge/AI-Groq_LLM-purple)
-![License](https://img.shields.io/badge/License-MIT-blue)
 
 </p>
 
