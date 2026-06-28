@@ -468,7 +468,3 @@ Birla Institute of Technology, Mesra
 GitHub: https://github.com/Anni27-hub
 
 ---
-
-# License
-
-This project is licensed under the MIT License.
